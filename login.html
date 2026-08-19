@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Volt Member Portal | VIP Sign In, Analytics & Spot Reservations</title>
+  <meta name="description" content="Access your Apex Volt member portal: track weekly workouts, reserve equipment spots and lockers, check biometric progress, and unlock achievements.">
+  
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <header class="main-header">
+    <a href="index.html" class="logo">
+      <div class="logo-badge">A</div>
+      <span>APEX<span style="color:var(--volt-primary)">VOLT</span></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="login.html" class="nav-link active">Member Portal</a></li>
+    </ul>
+
+    <div class="header-actions">
+      <button class="btn-volt" data-modal="vip-modal">VIP Pass</button>
+      <button class="mobile-toggle" aria-label="Toggle Navigation">☰</button>
+    </div>
+  </header>
+
+  <aside class="section-nav-tracker">
+    <div class="tracker-dot active" data-title="01. VIP Login"></div>
+    <div class="tracker-dot" data-title="02. Analytics"></div>
+    <div class="tracker-dot" data-title="03. Spot Reservation"></div>
+    <div class="tracker-dot" data-title="04. Achievements"></div>
+    <div class="tracker-dot" data-title="05. App & Security"></div>
+  </aside>
+
+  <div class="section-counter-badge">
+    <span class="current">01</span> / <span class="total">05</span>
+  </div>
+
+  <main class="page-container">
+
+    <!-- SECTION 1: AUTHENTICATION PORTAL -->
+    <section class="full-section" id="auth">
+      <div class="section-bg">
+        <img src="images/pricing_contact_bg.png" alt="VIP Auth Portal Base">
+      </div>
+
+      <div class="section-content">
+        <div class="grid-2">
+          <div>
+            <div class="tagline">// SECTION 01</div>
+            <h1 class="section-title">VIP MEMBER <span class="highlight">PORTAL</span></h1>
+            <p class="section-desc">
+              Manage your biometric telemetry, reserve class rigs, track locker reservations, and check your monthly recovery credits.
+            </p>
+
+            <div style="display:flex; gap:12px; margin-top:20px;">
+              <button class="btn-outline" onclick="alert('Simulating Passkey / Biometric FaceID login...');">Sign In with Passkey</button>
+            </div>
+          </div>
+
+          <!-- Auth Card -->
+          <div class="glass-card">
+            <div style="display:flex; gap:12px; margin-bottom:20px; border-bottom:1px solid var(--border-subtle); padding-bottom:12px;">
+              <button class="btn-outline auth-tab active" id="tab-login" onclick="switchAuthTab('login')" style="flex:1; padding:8px;">Sign In</button>
+              <button class="btn-outline auth-tab" id="tab-register" onclick="switchAuthTab('register')" style="flex:1; padding:8px;">New Registration</button>
+            </div>
+
+            <form id="auth-form" onsubmit="event.preventDefault(); alert('Member Signed In Successfully!');">
+              <div class="form-group">
+                <label>Member ID / Email</label>
+                <input type="email" class="form-input" required placeholder="alex@apex.com" value="alex.mercer@apex.com">
+              </div>
+              <div class="form-group">
+                <label>Access Password</label>
+                <input type="password" class="form-input" required value="••••••••••••">
+              </div>
+
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; font-size:0.8rem;">
+                <label style="color:var(--text-muted); cursor:pointer;">
+                  <input type="checkbox" checked style="accent-color:var(--volt-primary);"> Remember Session
+                </label>
+                <a href="#" onclick="alert('Password reset link dispatched to registered email.')" style="color:var(--volt-primary); text-decoration:none;">Forgot Access Key?</a>
+              </div>
+
+              <button type="submit" class="btn-volt" style="width:100%; justify-content:center;">Access Member Dashboard</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: LIVE MEMBER ANALYTICS DASHBOARD PREVIEW -->
+    <section class="full-section" id="dashboard">
+      <div class="section-bg">
+        <img src="images/coaching_about_bg.png" alt="Biometric Analytics Dashboard Base">
+      </div>
+
+      <div class="section-content">
+        <div class="tagline">// SECTION 02</div>
+        <h2 class="section-title">BIOMETRIC <span class="highlight">ANALYTICS PREVIEW</span></h2>
+        <p class="section-desc">
+          Real-time snapshot of Alex Mercer's weekly training telemetry.
+        </p>
+
+        <div class="grid-4" style="margin-top:20px;">
+          <div class="stat-card">
+            <span style="font-size:0.8rem; color:var(--text-dim); display:block; margin-bottom:4px;">CALORIES BURNED THIS WEEK</span>
+            <span class="stat-number" style="color:var(--volt-primary);">3,450 kcal</span>
+            <span style="font-size:0.75rem; color:var(--volt-primary);">↑ 14% vs last week</span>
+          </div>
+
+          <div class="stat-card">
+            <span style="font-size:0.8rem; color:var(--text-dim); display:block; margin-bottom:4px;">WORKOUT STREAK</span>
+            <span class="stat-number" style="color:var(--cyan-accent);">14 Days</span>
+            <span style="font-size:0.75rem; color:var(--cyan-accent);">Apex Beast Status</span>
+          </div>
+
+          <div class="stat-card">
+            <span style="font-size:0.8rem; color:var(--text-dim); display:block; margin-bottom:4px;">AVG HEART RATE ZONE</span>
+            <span class="stat-number" style="color:var(--crimson-pulse);">152 BPM</span>
+            <span style="font-size:0.75rem; color:var(--crimson-pulse);">Zone 4 (Threshold)</span>
+          </div>
+
+          <div class="stat-card">
+            <span style="font-size:0.8rem; color:var(--text-dim); display:block; margin-bottom:4px;">RECOVERY SPA CREDITS</span>
+            <span class="stat-number" style="color:#fff;">04 Left</span>
+            <span style="font-size:0.75rem; color:var(--text-muted);">Renews in 12 days</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: SPOT & LOCKER RESERVATION MANAGER -->
+    <section class="full-section" id="reservations">
+      <div class="section-bg">
+        <img src="images/disciplines_bg.png" alt="Spot & Locker Selector Base">
+      </div>
+
+      <div class="section-content">
+        <div class="grid-2">
+          <div>
+            <div class="tagline">// SECTION 03</div>
+            <h2 class="section-title">RIG STATION & <span class="highlight">LOCKER SELECTOR</span></h2>
+            <p class="section-desc">
+              Reserve your exact workout station or digital locker for today's session.
+            </p>
+
+            <div style="background:rgba(255,255,255,0.03); padding:16px; border-radius:10px; border:1px solid var(--border-subtle); margin-top:20px;">
+              <span id="selected-spot-label" style="font-family:var(--font-heading); font-size:1.1rem; color:var(--volt-primary); font-weight:800;">Selected: Spot #07 Reserved</span>
+              <p style="font-size:0.8rem; color:var(--text-muted); margin-top:4px;">Assault Bike & Rogue Rig Station • 05:30 PM Session</p>
+            </div>
+          </div>
+
+          <!-- Spot Grid Selector -->
+          <div class="glass-card">
+            <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.1rem; margin-bottom:12px;">Interactive Floor Grid (Select Station)</h3>
+            
+            <style>
+              .spot-picker-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+                margin-bottom: 16px;
+              }
+              .spot-btn {
+                background: rgba(255,255,255,0.05);
+                border: 1px solid var(--border-subtle);
+                color: #fff;
+                padding: 14px 8px;
+                border-radius: 6px;
+                font-family: var(--font-heading);
+                font-weight: 800;
+                cursor: pointer;
+                transition: var(--transition-fast);
+              }
+              .spot-btn:hover { border-color: var(--volt-primary); color: var(--volt-primary); }
+              .spot-btn.selected { background: var(--volt-primary); color: #000; box-shadow: 0 0 12px var(--volt-primary); }
+              .spot-btn.occupied { opacity: 0.3; cursor: not-allowed; text-decoration: line-through; }
+            </style>
+
+            <div class="spot-picker-grid">
+              <!-- Dynamically populated by app.js -->
+            </div>
+
+            <div style="display:flex; gap:16px; font-size:0.75rem; color:var(--text-muted);">
+              <span><strong style="color:var(--volt-primary);">■</strong> Selected</span>
+              <span><strong style="color:rgba(255,255,255,0.4);">■</strong> Available</span>
+              <span><strong style="color:rgba(255,255,255,0.1);">■</strong> Occupied</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: GAMIFIED ACHIEVEMENTS -->
+    <section class="full-section" id="achievements">
+      <div class="section-bg">
+        <img src="images/class_schedule_bg.png" alt="Gamified Achievements Base">
+      </div>
+
+      <div class="section-content">
+        <div class="tagline">// SECTION 04</div>
+        <h2 class="section-title">UNLOCKED <span class="highlight">MILESTONES & BADGES</span></h2>
+
+        <div class="grid-4" style="margin-top:20px;">
+          <div class="glass-card" style="text-align:center;">
+            <div class="card-img-wrapper" style="height:120px;">
+              <img src="images/badge-100-visits.jpg" alt="100 Club Visits Badge" class="card-img-placeholder">
+            </div>
+            <h4 style="color:var(--volt-primary); margin-bottom:4px;">100 Club Visits</h4>
+            <span style="font-size:0.75rem; color:var(--text-dim);">UNLOCKED JAN 2026</span>
+          </div>
+
+          <div class="glass-card" style="text-align:center;">
+            <div class="card-img-wrapper" style="height:120px;">
+              <img src="images/badge-iron-beast.jpg" alt="Iron Beast Badge" class="card-img-placeholder">
+            </div>
+            <h4 style="color:var(--cyan-accent); margin-bottom:4px;">Iron Beast (500lb Club)</h4>
+            <span style="font-size:0.75rem; color:var(--text-dim);">UNLOCKED FEB 2026</span>
+          </div>
+
+          <div class="glass-card" style="text-align:center;">
+            <div class="card-img-wrapper" style="height:120px;">
+              <img src="images/badge-cryo-master.jpg" alt="Cryo Master Badge" class="card-img-placeholder">
+            </div>
+            <h4 style="color:var(--crimson-pulse); margin-bottom:4px;">Cryo Master (25 Sessions)</h4>
+            <span style="font-size:0.75rem; color:var(--text-dim);">UNLOCKED FEB 2026</span>
+          </div>
+
+          <div class="glass-card" style="text-align:center; opacity:0.4;">
+            <div class="card-img-wrapper" style="height:120px;">
+              <img src="images/badge-streak-locked.jpg" alt="365 Streak Master Locked Badge" class="card-img-placeholder">
+            </div>
+            <h4 style="color:#fff; margin-bottom:4px;">365 Streak Master</h4>
+            <span style="font-size:0.75rem; color:var(--text-dim);">LOCKED (214/365 DAYS)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: APP DOWNLOAD & SECURITY -->
+    <section class="full-section" id="security">
+      <div class="section-bg">
+        <img src="images/hero_fitness_gym.png" alt="Security Base">
+      </div>
+      <div class="section-content" style="text-align:center; align-items:center;">
+        <div class="tagline" style="margin:0 auto 12px auto;">// SECTION 05</div>
+        <h2 class="section-title" style="max-width:800px;">MOBILE ACCESS & <span class="highlight">SECURITY</span></h2>
+        
+        <div style="background:var(--bg-card); border:1px solid var(--border-glow); border-radius:16px; padding:30px; max-width:650px; width:100%; backdrop-filter:blur(16px); margin-top:20px;">
+          <div class="card-img-wrapper" style="width:140px; height:140px; margin:0 auto 16px auto;">
+            <img src="images/app-download-qr.jpg" alt="Download Mobile App QR Code" class="card-img-placeholder">
+          </div>
+          <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.3rem; margin-bottom:8px;">Download Apex Volt iOS & Android App</h3>
+          <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:20px;">Scan to sync turnstile keycard barcode, smart watch heart rate, and locker access.</p>
+
+          <button class="btn-volt" onclick="alert('Generating Mobile App Download Link...');">Download Mobile App</button>
+        </div>
+
+        <!-- Site Footer Component -->
+        <footer class="site-footer">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a href="index.html" class="logo" style="font-size:1.3rem;">
+                <div class="logo-badge" style="width:30px; height:30px; font-size:1rem;">A</div>
+                <span>APEX<span style="color:var(--volt-primary)">VOLT</span></span>
+              </a>
+              <p style="font-size:0.8rem; color:var(--text-muted); margin-top:6px;">Ultra-luxury high-performance sanctuary engineered for physical and mental supremacy.</p>
+            </div>
+
+            <div>
+              <h4 class="footer-col-title">Navigation</h4>
+              <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="pricing.html">Pricing Tiers</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="footer-col-title">Portal & Access</h4>
+              <ul class="footer-links">
+                <li><a href="login.html">Member Sign In</a></li>
+                <li><a href="contact.html">Book Private Tour</a></li>
+                <li><a href="pricing.html">Cost Estimator</a></li>
+                <li><a href="contact.html">VIP Concierge</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="footer-col-title">Contact & Hubs</h4>
+              <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">100 Apex Way, Suite 400<br>Downtown HQ Flagship<br><strong style="color:var(--volt-primary);">+1 (800) 555-APEX</strong></p>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <span>&copy; 2026 Apex Volt Fitness Club Inc. All Rights Reserved.</span>
+            <div style="display:flex; gap:16px;">
+              <a href="#" style="color:var(--text-dim); text-decoration:none;">Privacy Policy</a>
+              <a href="#" style="color:var(--text-dim); text-decoration:none;">Terms of Service</a>
+              <a href="#" style="color:var(--text-dim); text-decoration:none;">Security Notice</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="modal-overlay" id="vip-modal">
+    <div class="modal-box">
+      <button class="modal-close">✕</button>
+      <div class="tagline">// VIP PASS</div>
+      <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.6rem; margin-bottom:12px;">CLAIM YOUR 7-DAY VIP PASS</h3>
+      <form onsubmit="event.preventDefault(); alert('VIP Pass Unlocked!'); document.getElementById('vip-modal').classList.remove('active');">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-input" required placeholder="Alex Mercer">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-input" required placeholder="alex@apex.com">
+        </div>
+        <button type="submit" class="btn-volt" style="width:100%; justify-content:center; margin-top:10px;">Get Digital Pass</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/animations.js"></script>
+  <script>
+    function switchAuthTab(tab) {
+      document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+      if (tab === 'login') {
+        document.getElementById('tab-login').classList.add('active');
+      } else {
+        document.getElementById('tab-register').classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

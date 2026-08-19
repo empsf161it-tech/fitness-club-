@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Volt Fitness Club | Luxury High-Performance Gym & Biohacking Sanctuary</title>
+  <meta name="description" content="Forge your apex physique at Apex Volt Fitness Club. State-of-the-art hypertrophy zones, functional HIIT, cryotherapy recovery spa, and 1-on-1 biometric coaching.">
+  
+  <!-- CSS, Favicon & Fonts -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header">
+    <a href="index.html" class="logo">
+      <div class="logo-badge">A</div>
+      <span>APEX<span style="color:var(--volt-primary)">VOLT</span></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="login.html" class="nav-link">Member Portal</a></li>
+    </ul>
+
+    <div class="header-actions">
+      <button class="btn-volt" data-modal="vip-modal">VIP Pass</button>
+      <button class="mobile-toggle" aria-label="Toggle Navigation">☰</button>
+    </div>
+  </header>
+
+  <!-- Lateral Section Progress Indicator Tracker -->
+  <aside class="section-nav-tracker">
+    <div class="tracker-dot active" data-title="01. Apex Hero"></div>
+    <div class="tracker-dot" data-title="02. Disciplines"></div>
+    <div class="tracker-dot" data-title="03. Live Classes"></div>
+    <div class="tracker-dot" data-title="04. Results"></div>
+    <div class="tracker-dot" data-title="05. VIP Access"></div>
+  </aside>
+
+  <!-- Bottom Section Counter Badge -->
+  <div class="section-counter-badge">
+    <span class="current">01</span> / <span class="total">05</span>
+  </div>
+
+  <!-- Page Snap Container (5 Full Screen 100vh Sections) -->
+  <main class="page-container">
+
+    <!-- SECTION 1: HERO BANNER -->
+    <section class="full-section" id="hero">
+      <div class="section-bg">
+        <img src="images/hero_fitness_gym.png" alt="Apex Volt Gym Sanctuary Floor">
+      </div>
+      
+      <div class="section-content hero-content">
+        <div class="tagline">// THE APEX STANDARD</div>
+        <h1 class="section-title">FORGE YOUR <span class="highlight">APEX PHYSIQUE</span> & MIND</h1>
+        <p class="section-desc">
+          An ultra-luxury high-performance sanctuary engineered for athletes and ambitious individuals. Experience biometric coaching, Rogue athletic rigs, and -110°C biohacking cryo-recovery.
+        </p>
+
+        <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:center; margin-bottom:30px;">
+          <button class="btn-volt" data-modal="vip-modal">Claim 7-Day VIP Pass</button>
+          <a href="services.html" class="btn-outline">Explore Disciplines</a>
+        </div>
+
+        <div style="display:inline-flex; align-items:center; gap:12px; background:rgba(16,18,27,0.8); padding:10px 18px; border-radius:30px; border:1px solid var(--border-subtle); backdrop-filter:blur(10px); width:fit-content;">
+          <span style="width:10px; height:10px; border-radius:50%; background:var(--volt-primary); box-shadow:0 0 10px var(--volt-primary); display:inline-block;"></span>
+          <span style="font-size:0.85rem; color:var(--text-muted); font-weight:600;">Live Club Status: <strong style="color:#fff;">142 Athletes Training</strong> • Downtown Hub</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: APEX DISCIPLINES -->
+    <section class="full-section" id="disciplines">
+      <div class="section-bg">
+        <img src="images/disciplines_bg.png" alt="Apex Performance Disciplines Arena">
+      </div>
+      
+      <div class="section-content">
+        <div class="tagline">// CORE DISCIPLINES</div>
+        <h2 class="section-title">ENGINEERED FOR <span class="highlight">SUPREMACY</span></h2>
+        <p class="section-desc">
+          Choose your track. Every discipline is supported by master trainers, custom wearable telemetry, and targeted sports nutrition.
+        </p>
+
+        <div class="grid-4">
+          <div class="glass-card">
+            <div class="card-img-wrapper">
+              <img src="images/discipline-hypertrophy.jpg" alt="Hypertrophy Lab" class="card-img-placeholder">
+            </div>
+            <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.3rem; margin-bottom:8px;">Hypertrophy Lab</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.5;">Biomechanical resistance machines, calibrated iron, and muscle-architecture programming.</p>
+          </div>
+
+          <div class="glass-card">
+            <div class="card-img-wrapper">
+              <img src="images/discipline-hiit.jpg" alt="Functional HIIT Zone" class="card-img-placeholder">
+            </div>
+            <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.3rem; margin-bottom:8px;">Functional HIIT Zone</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.5;">Sprint turf tracks, Rogue rigs, assault bikes, and high-intensity metabolic conditioning.</p>
+          </div>
+
+          <div class="glass-card">
+            <div class="card-img-wrapper">
+              <img src="images/discipline-cryotherapy.jpg" alt="Cryo & Spa Bio-Lounge" class="card-img-placeholder">
+            </div>
+            <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.3rem; margin-bottom:8px;">Cryo & Spa Bio-Lounge</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.5;">-110°C Cryotherapy chambers, infrared saunas, and contrast hydro plunge therapy.</p>
+          </div>
+
+          <div class="glass-card">
+            <div class="card-img-wrapper">
+              <img src="images/discipline-nutrition.jpg" alt="Metabolic & Macro Science" class="card-img-placeholder">
+            </div>
+            <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.3rem; margin-bottom:8px;">Metabolic & Macro Science</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.5;">VO2 max testing, body composition scans, and in-house customized macro meal plans.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: LIVE CLASSES & INSTANT BOOKING -->
+    <section class="full-section" id="classes">
+      <div class="section-bg">
+        <img src="images/class_schedule_bg.png" alt="Live Class Schedule Studio">
+      </div>
+
+      <div class="section-content">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; margin-bottom:20px;">
+          <div>
+            <div class="tagline">// LIVE SCHEDULE</div>
+            <h2 class="section-title">DOMINATE THE <span class="highlight">DAILY WORKOUT</span></h2>
+          </div>
+
+          <!-- Category Filter Buttons -->
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn-outline class-filter-btn active" data-filter="all" style="padding:8px 16px; font-size:0.8rem;">All Classes</button>
+            <button class="btn-outline class-filter-btn" data-filter="hiit" style="padding:8px 16px; font-size:0.8rem;">HIIT & Burn</button>
+            <button class="btn-outline class-filter-btn" data-filter="strength" style="padding:8px 16px; font-size:0.8rem;">Pure Strength</button>
+            <button class="btn-outline class-filter-btn" data-filter="recovery" style="padding:8px 16px; font-size:0.8rem;">Flow & Recovery</button>
+          </div>
+        </div>
+
+        <div class="grid-3" id="class-grid">
+          <div class="glass-card class-card" data-category="hiit">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <span style="background:rgba(204,255,0,0.15); color:var(--volt-primary); padding:4px 10px; border-radius:4px; font-size:0.75rem; font-weight:800;">07:00 AM • 50 MIN</span>
+              <span style="color:var(--cyan-accent); font-size:0.8rem; font-weight:700;">4 Spots Left</span>
+            </div>
+            <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.2rem; margin-bottom:6px;">Apex HIIT Metcon</h3>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:16px;">High-octane metabolic circuit training led by Master Coach Marcus Vance.</p>
+            <button class="btn-volt" data-modal="booking-modal" style="width:100%; justify-content:center; padding:10px; font-size:0.85rem;">Reserve Spot</button>
+          </div>
+
+          <div class="glass-card class-card" data-category="strength">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <span style="background:rgba(0,240,255,0.15); color:var(--cyan-accent); padding:4px 10px; border-radius:4px; font-size:0.75rem; font-weight:800;">09:30 AM • 60 MIN</span>
+              <span style="color:var(--cyan-accent); font-size:0.8rem; font-weight:700;">2 Spots Left</span>
+            </div>
+            <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.2rem; margin-bottom:6px;">Olympic Power Rig</h3>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:16px;">Heavy compound lifting technique and bar path mechanics with Coach Elena Rostova.</p>
+            <button class="btn-volt" data-modal="booking-modal" style="width:100%; justify-content:center; padding:10px; font-size:0.85rem;">Reserve Spot</button>
+          </div>
+
+          <div class="glass-card class-card" data-category="recovery">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <span style="background:rgba(255,42,95,0.15); color:var(--crimson-pulse); padding:4px 10px; border-radius:4px; font-size:0.75rem; font-weight:800;">05:30 PM • 45 MIN</span>
+              <span style="color:var(--volt-primary); font-size:0.8rem; font-weight:700;">6 Spots Left</span>
+            </div>
+            <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.2rem; margin-bottom:6px;">Cryo-Sauna Mobility Flow</h3>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:16px;">Myofascial release, infrared heat therapy, and breathwork guidance.</p>
+            <button class="btn-volt" data-modal="booking-modal" style="width:100%; justify-content:center; padding:10px; font-size:0.85rem;">Reserve Spot</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: TRANSFORMATIONS & METRICS -->
+    <section class="full-section" id="results">
+      <div class="section-bg">
+        <img src="images/hero_fitness_gym.png" alt="Apex Performance Results Floor">
+      </div>
+
+      <div class="section-content">
+        <div class="grid-2">
+          <!-- Interactive Before / After Comparison Slider -->
+          <div>
+            <div class="tagline">// PROVEN METRICS</div>
+            <h2 class="section-title">TRANSFORMATION <span class="highlight">ENGINEERING</span></h2>
+            <p class="section-desc">
+              Slide to view real 12-week member body composition transformations monitored by our biometric sensors.
+            </p>
+
+            <div class="ba-slider-container" style="position:relative; width:100%; height:260px; border-radius:12px; overflow:hidden; border:1px solid var(--border-glow);">
+              <!-- Before Image Base -->
+              <div style="position:absolute; inset:0; background:linear-gradient(135deg, #1e2436, #090a0f); display:flex; align-items:center; justify-content:center; color:var(--text-muted); font-weight:800;">
+                <div style="text-align:center;">
+                  <div style="font-size:2.5rem; color:var(--text-dim); margin-bottom:4px;">WEEK 01</div>
+                  <span style="font-size:0.9rem; color:var(--text-muted);">24.5% Body Fat • Baseline Physique</span>
+                </div>
+              </div>
+
+              <!-- After Image Clipped -->
+              <div class="ba-after-img" style="position:absolute; inset:0; background:linear-gradient(135deg, rgba(204,255,0,0.2), #0f172a); display:flex; align-items:center; justify-content:center; clip-path:polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+                <div style="text-align:center;">
+                  <div style="font-size:2.5rem; color:var(--volt-primary); margin-bottom:4px;">WEEK 12</div>
+                  <span style="font-size:0.9rem; color:#fff; font-weight:700;">10.2% Body Fat • +8.5 lbs Lean Muscle</span>
+                </div>
+              </div>
+
+              <!-- Slider Drag Handle -->
+              <div class="ba-handle" style="position:absolute; top:0; bottom:0; left:50%; width:4px; background:var(--volt-primary); cursor:ew-resize; box-shadow:0 0 12px var(--volt-primary);">
+                <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:28px; height:28px; background:var(--volt-primary); color:#000; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:0.8rem;">↔</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Counter Stats Grid -->
+          <div class="grid-2">
+            <div class="stat-card">
+              <span class="stat-number counter-num" data-target="15400">15,400+</span>
+              <span class="stat-label">Active Apex Members</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number counter-num" data-target="99">99.4%</span>
+              <span class="stat-label">Goal Completion Rate</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number counter-num" data-target="4">04</span>
+              <span class="stat-label">Luxury City Flagships</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number counter-num" data-target="48">48+</span>
+              <span class="stat-label">Master Performance Coaches</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: JOIN THE MOVEMENT / CTA -->
+    <section class="full-section" id="join">
+      <div class="section-bg">
+        <img src="images/recovery_spa_cryo.png" alt="VIP Access Sanctuary Lounge">
+      </div>
+      <div class="section-content" style="text-align:center; align-items:center;">
+        <div class="tagline" style="margin:0 auto 12px auto;">// UNLOCK APEX STATUS</div>
+        <h2 class="section-title" style="max-width:800px;">YOUR EVOLUTION BEGINS <span class="highlight">RIGHT NOW</span></h2>
+        <p class="section-desc" style="margin:0 auto 32px auto;">
+          Experience 7 days of complimentary access to our strength zones, cryo-recovery suites, and functional group training.
+        </p>
+
+        <div style="background:var(--bg-card); border:1px solid var(--border-glow); border-radius:16px; padding:36px; max-width:650px; width:100%; backdrop-filter:blur(16px); box-shadow:0 0 40px rgba(204,255,0,0.15);">
+          <form onsubmit="event.preventDefault(); alert('VIP Pass Unlocked! Check your email for your digital access barcode.');">
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:16px;">
+              <input type="text" class="form-input" placeholder="Full Name" required style="flex:1;">
+              <input type="email" class="form-input" placeholder="Email Address" required style="flex:1;">
+            </div>
+            <button type="submit" class="btn-volt" style="width:100%; justify-content:center; font-size:1.05rem;">Get Instant VIP Access Barcode</button>
+          </form>
+          <div style="margin-top:16px; font-size:0.8rem; color:var(--text-dim);">No credit card required. Includes 1-on-1 trainer consultation & recovery spa access.</div>
+        </div>
+
+        <!-- Site Footer Component -->
+        <footer class="site-footer">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a href="index.html" class="logo" style="font-size:1.3rem;">
+                <div class="logo-badge" style="width:30px; height:30px; font-size:1rem;">A</div>
+                <span>APEX<span style="color:var(--volt-primary)">VOLT</span></span>
+              </a>
+              <p style="font-size:0.8rem; color:var(--text-muted); margin-top:6px;">Ultra-luxury high-performance sanctuary engineered for physical and mental supremacy.</p>
+            </div>
+
+            <div>
+              <h4 class="footer-col-title">Navigation</h4>
+              <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="pricing.html">Pricing Tiers</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="footer-col-title">Portal & Access</h4>
+              <ul class="footer-links">
+                <li><a href="login.html">Member Sign In</a></li>
+                <li><a href="contact.html">Book Private Tour</a></li>
+                <li><a href="pricing.html">Cost Estimator</a></li>
+                <li><a href="contact.html">VIP Concierge</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="footer-col-title">Contact & Hubs</h4>
+              <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">100 Apex Way, Suite 400<br>Downtown HQ Flagship<br><strong style="color:var(--volt-primary);">+1 (800) 555-APEX</strong></p>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <span>&copy; 2026 Apex Volt Fitness Club Inc. All Rights Reserved.</span>
+            <div style="display:flex; gap:16px;">
+              <a href="#" style="color:var(--text-dim); text-decoration:none;">Privacy Policy</a>
+              <a href="#" style="color:var(--text-dim); text-decoration:none;">Terms of Service</a>
+              <a href="#" style="color:var(--text-dim); text-decoration:none;">Security Notice</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL 1: VIP PASS OVERLAY -->
+  <div class="modal-overlay" id="vip-modal">
+    <div class="modal-box">
+      <button class="modal-close">✕</button>
+      <div class="tagline">// VIP PASS</div>
+      <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.6rem; margin-bottom:12px;">CLAIM YOUR 7-DAY ACCESS PASS</h3>
+      <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:20px;">Receive a digital QR pass for 24/7 facility access, locker privileges, and 1 cryo session.</p>
+      
+      <form onsubmit="event.preventDefault(); alert('VIP Pass Generated! Welcome to Apex Volt.'); document.getElementById('vip-modal').classList.remove('active');">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-input" required placeholder="e.g. Alex Mercer">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-input" required placeholder="alex@apex.com">
+        </div>
+        <div class="form-group">
+          <label>Preferred Home Hub</label>
+          <select class="form-input">
+            <option>Downtown HQ Flagship</option>
+            <option>Uptown Athletic Center</option>
+            <option>Westside Bay Club</option>
+            <option>Metro Tech Hub</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-volt" style="width:100%; justify-content:center; margin-top:10px;">Activate VIP Pass Now</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 2: CLASS BOOKING OVERLAY -->
+  <div class="modal-overlay" id="booking-modal">
+    <div class="modal-box">
+      <button class="modal-close">✕</button>
+      <div class="tagline">// CLASS RESERVATION</div>
+      <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.5rem; margin-bottom:8px;">CONFIRM SPOT RESERVATION</h3>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:20px;">Instant reservation synced to your Apex Volt mobile app profile.</p>
+
+      <form onsubmit="event.preventDefault(); alert('Spot Reserved Successfully! Check Member Portal.'); document.getElementById('booking-modal').classList.remove('active');">
+        <div class="form-group">
+          <label>Member ID / Email</label>
+          <input type="text" class="form-input" required placeholder="Member ID or Email">
+        </div>
+        <div class="form-group">
+          <label>Locker & Equipment Spot</label>
+          <select class="form-input">
+            <option>Rig Station #01 (Front Zone)</option>
+            <option>Rig Station #04 (Assault Bike)</option>
+            <option>Rig Station #07 (Sprint Turf)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-volt" style="width:100%; justify-content:center;">Confirm Reservation</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

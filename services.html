@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Volt Services | Elite Coaching, Cryo Bio-Hacking & Metabolic Lab</title>
+  <meta name="description" content="Explore Apex Volt services: 1-on-1 biometric personal training, functional turf zones, -110°C cryotherapy recovery lounge, and custom metabolic nutrition science.">
+  
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="main-header">
+    <a href="index.html" class="logo">
+      <div class="logo-badge">A</div>
+      <span>APEX<span style="color:var(--volt-primary)">VOLT</span></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="services.html" class="nav-link active">Services</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="login.html" class="nav-link">Member Portal</a></li>
+    </ul>
+
+    <div class="header-actions">
+      <button class="btn-volt" data-modal="vip-modal">VIP Pass</button>
+      <button class="mobile-toggle" aria-label="Toggle Navigation">☰</button>
+    </div>
+  </header>
+
+  <!-- Side Section Tracker -->
+  <aside class="section-nav-tracker">
+    <div class="tracker-dot active" data-title="01. Elite Coaching"></div>
+    <div class="tracker-dot" data-title="02. Functional Zone"></div>
+    <div class="tracker-dot" data-title="03. Cryo Bio-Lounge"></div>
+    <div class="tracker-dot" data-title="04. Metabolic Lab"></div>
+    <div class="tracker-dot" data-title="05. App Telemetry"></div>
+  </aside>
+
+  <div class="section-counter-badge">
+    <span class="current">01</span> / <span class="total">05</span>
+  </div>
+
+  <main class="page-container">
+
+    <!-- SECTION 1: 1-ON-1 PERSONAL & BIOMETRIC COACHING -->
+    <section class="full-section" id="coaching">
+      <div class="section-bg">
+        <img src="images/coaching_about_bg.png" alt="1-on-1 Biometric Coaching Lounge">
+      </div>
+
+      <div class="section-content">
+        <div class="grid-2">
+          <div>
+            <div class="tagline">// SERVICE 01</div>
+            <h1 class="section-title">1-ON-1 BIOMETRIC <span class="highlight">COACHING</span></h1>
+            <p class="section-desc">
+              Every body is unique. Our master coaches utilize continuous heart-rate tracking, lactic threshold testing, and force-plate analysis to craft your exact program.
+            </p>
+            <button class="btn-volt" data-modal="vip-modal">Book Coaching Consultation</button>
+          </div>
+
+          <!-- Interactive Coach Goal Selector -->
+          <div class="glass-card">
+            <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.3rem; margin-bottom:12px;">Trainer Specialization Matcher</h3>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:16px;">Select your primary athletic target to view recommended master coaches:</p>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;">
+              <button class="btn-outline goal-btn active" onclick="setGoal('hypertrophy')" style="padding:8px 14px; font-size:0.8rem;">Muscle Hypertrophy</button>
+              <button class="btn-outline goal-btn" onclick="setGoal('fatloss')" style="padding:8px 14px; font-size:0.8rem;">Metabolic Recomp</button>
+              <button class="btn-outline goal-btn" onclick="setGoal('athletic')" style="padding:8px 14px; font-size:0.8rem;">Athletic Power</button>
+            </div>
+
+            <div id="coach-match-display" style="background:rgba(0,0,0,0.4); padding:16px; border-radius:8px; border:1px solid var(--border-subtle);">
+              <div style="font-weight:800; color:var(--volt-primary); margin-bottom:4px;">MATCHED COACH: Marcus Vance</div>
+              <div style="font-size:0.85rem; color:var(--text-muted);">IFBB Pro & Biomechanics Lead • 12+ Yrs Experience</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: FUNCTIONAL & ATHLETIC ZONE -->
+    <section class="full-section" id="functional">
+      <div class="section-bg">
+        <img src="images/disciplines_bg.png" alt="Functional & Strength Arena">
+      </div>
+
+      <div class="section-content">
+        <div class="tagline">// SERVICE 02</div>
+        <h2 class="section-title">FUNCTIONAL & <span class="highlight">STRENGTH ARENA</span></h2>
+        <p class="section-desc">
+          State-of-the-art facility featuring 45m sprint turf, Rogue Monster Rigs, Keiser Pneumatic Resistance, and Eleiko competition bars.
+        </p>
+
+        <div class="grid-3">
+          <div class="glass-card">
+            <div class="card-img-wrapper">
+              <img src="images/equipment-rogue-rigs.jpg" alt="Rogue Monster Rigs" class="card-img-placeholder">
+            </div>
+            <h3 style="color:#fff; font-family:var(--font-heading); font-size:1.2rem; margin-bottom:6px;">Rogue Monster Rigs</h3>
+            <p style="color:var(--text-muted); font-size:0.85rem;">Custom power racks equipped with integrated force sensors and bar velocity tracking.</p>
+          </div>
+
+          <div class="glass-card">
+            <div class="card-img-wrapper">
+              <img src="images/equipment-woodway.jpg" alt="Woodway Curved Treadmills" class="card-img-placeholder">
+            </div>
+            <h3 style="color:#fff; font-family:var(--font-heading); font-size:1.2rem; margin-bottom:6px;">Woodway Curved Treadmills</h3>
+            <p style="color:var(--text-muted); font-size:0.85rem;">Slat-belt motorless treadmills for maximum posterior chain activation and stride optimization.</p>
+          </div>
+
+          <div class="glass-card">
+            <div class="card-img-wrapper">
+              <img src="images/equipment-keiser.jpg" alt="Keiser Pneumatic Power" class="card-img-placeholder">
+            </div>
+            <h3 style="color:#fff; font-family:var(--font-heading); font-size:1.2rem; margin-bottom:6px;">Keiser Pneumatic Power</h3>
+            <p style="color:var(--text-muted); font-size:0.85rem;">Air-resistance explosive training machines protecting joints while maximizing peak velocity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CRYO & BIO-HACKING RECOVERY LOUNGE -->
+    <section class="full-section" id="recovery">
+      <div class="section-bg">
+        <img src="images/recovery_spa_cryo.png" alt="Cryo Recovery Spa Lounge">
+      </div>
+
+      <div class="section-content">
+        <div class="grid-2">
+          <div>
+            <div class="tagline">// SERVICE 03</div>
+            <h2 class="section-title">CRYO & BIO-HACKING <span class="highlight">SPA LOUNGE</span></h2>
+            <p class="section-desc">
+              Accelerate muscular recovery, reduce inflammation, and optimize nervous system repair with our medical-grade cryotherapy and sauna suites.
+            </p>
+            
+            <div style="display:flex; gap:12px; margin-top:20px;">
+              <button class="btn-volt" data-modal="vip-modal">Try Cryotherapy Session</button>
+            </div>
+          </div>
+
+          <!-- Interactive Temperature Toggle Card -->
+          <div class="glass-card">
+            <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.2rem; margin-bottom:12px;">Therapy Selector & Live Ambient Simulator</h3>
+            
+            <div style="display:flex; gap:8px; margin-bottom:16px;">
+              <button class="btn-outline" onclick="updateSpaTherapy('cryo', '-110°C', '3 Minutes', 'Rapid systemic inflammation reduction & endorphin release.')" style="flex:1; padding:8px; font-size:0.75rem;">-110°C Cryo</button>
+              <button class="btn-outline" onclick="updateSpaTherapy('sauna', '75°C', '20 Minutes', 'Deep heat shock protein activation & vascular detoxification.')" style="flex:1; padding:8px; font-size:0.75rem;">Infrared Sauna</button>
+              <button class="btn-outline" onclick="updateSpaTherapy('plunge', '4°C', '5 Minutes', 'Vagus nerve stimulation & mitochondrial optimization.')" style="flex:1; padding:8px; font-size:0.75rem;">Ice Plunge</button>
+            </div>
+
+            <div id="spa-info-box" style="background:rgba(0,0,0,0.5); padding:16px; border-radius:8px; border:1px solid var(--volt-primary);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <span id="spa-temp" style="font-family:var(--font-heading); font-size:2rem; font-weight:900; color:var(--volt-primary);">-110°C</span>
+                <span id="spa-time" style="background:rgba(204,255,0,0.15); color:var(--volt-primary); padding:4px 10px; border-radius:4px; font-size:0.8rem; font-weight:700;">3 Minutes</span>
+              </div>
+              <p id="spa-desc" style="font-size:0.85rem; color:var(--text-muted);">Rapid systemic inflammation reduction & endorphin release.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PRECISION NUTRITION & METABOLIC LAB -->
+    <section class="full-section" id="nutrition">
+      <div class="section-bg">
+        <img src="images/class_schedule_bg.png" alt="Metabolic Nutrition Lab">
+      </div>
+
+      <div class="section-content">
+        <div class="grid-2">
+          <div>
+            <div class="tagline">// SERVICE 04</div>
+            <h2 class="section-title">METABOLIC LAB & <span class="highlight">MACRO NUTRITION</span></h2>
+            <p class="section-desc">
+              Fueling performance requires scientific precision. Access blood panel analysis, customized meal prep delivery, and in-house protein shake bar.
+            </p>
+            
+            <div class="grid-2" style="margin-top:20px;">
+              <div class="stat-card">
+                <span class="stat-number" style="color:var(--cyan-accent); font-size:2rem;">DEXA</span>
+                <span class="stat-label">3D Body Composition Scans</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number" style="color:var(--volt-primary); font-size:2rem;">VO2 MAX</span>
+                <span class="stat-label">Cardiovascular Fitness Testing</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Macro Ratio Estimator -->
+          <div class="glass-card">
+            <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.2rem; margin-bottom:12px;">Instant Macro Ratio Calculator</h3>
+            
+            <div class="form-group">
+              <label>Body Weight (lbs): <span id="weight-label" style="color:var(--volt-primary);">180 lbs</span></label>
+              <input type="range" id="macro-weight-slider" min="100" max="300" value="180" style="width:100%; accent-color:var(--volt-primary);" oninput="calcMacros()">
+            </div>
+
+            <div style="display:flex; justify-content:space-between; background:rgba(255,255,255,0.03); padding:12px; border-radius:8px; margin-bottom:12px;">
+              <div>
+                <span style="display:block; font-size:0.75rem; color:var(--text-dim);">PROTEIN</span>
+                <span id="protein-val" style="font-family:var(--font-heading); font-weight:800; color:var(--volt-primary); font-size:1.2rem;">180g</span>
+              </div>
+              <div>
+                <span style="display:block; font-size:0.75rem; color:var(--text-dim);">CARBS</span>
+                <span id="carbs-val" style="font-family:var(--font-heading); font-weight:800; color:var(--cyan-accent); font-size:1.2rem;">225g</span>
+              </div>
+              <div>
+                <span style="display:block; font-size:0.75rem; color:var(--text-dim);">FATS</span>
+                <span id="fats-val" style="font-family:var(--font-heading); font-weight:800; color:var(--crimson-pulse); font-size:1.2rem;">60g</span>
+              </div>
+            </div>
+            <span style="font-size:0.75rem; color:var(--text-dim);">*Estimates based on athletic lean muscle building profile.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: HYBRID APP & WEARABLE TELEMETRY -->
+    <section class="full-section" id="app">
+      <div class="section-bg">
+        <img src="images/hero_fitness_gym.png" alt="Hybrid App Telemetry">
+      </div>
+      <div class="section-content" style="text-align:center; align-items:center;">
+        <div class="tagline" style="margin:0 auto 12px auto;">// SERVICE 05</div>
+        <h2 class="section-title" style="max-width:800px;">HYBRID CONNECTIVITY & <span class="highlight">WEARABLE TELEMETRY</span></h2>
+        <p class="section-desc" style="margin:0 auto 30px auto;">
+          Connect WHOOP, Apple Watch, Garmin, or Oura to automatically broadcast heart rate zones to gym screens during workouts.
+        </p>
+
+        <div class="grid-3" style="max-width:1000px; width:100%;">
+          <div class="glass-card">
+            <h4 style="color:var(--volt-primary); margin-bottom:6px;">Live HR Broadcast</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Real-time pulse zone visualization on overhead displays in HIIT zones.</p>
+          </div>
+          <div class="glass-card">
+            <h4 style="color:var(--cyan-accent); margin-bottom:6px;">Workout Log Sync</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Automatic weight and rep logging via RFID smart barbell collars.</p>
+          </div>
+          <div class="glass-card">
+            <h4 style="color:var(--crimson-pulse); margin-bottom:6px;">Recovery Score</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Daily readiness score dictates your optimal workout intensity recommendation.</p>
+          </div>
+        </div>
+
+        <!-- Site Footer Component -->
+        <footer class="site-footer">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a href="index.html" class="logo" style="font-size:1.3rem;">
+                <div class="logo-badge" style="width:30px; height:30px; font-size:1rem;">A</div>
+                <span>APEX<span style="color:var(--volt-primary)">VOLT</span></span>
+              </a>
+              <p style="font-size:0.8rem; color:var(--text-muted); margin-top:6px;">Ultra-luxury high-performance sanctuary engineered for physical and mental supremacy.</p>
+            </div>
+
+            <div>
+              <h4 class="footer-col-title">Navigation</h4>
+              <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="pricing.html">Pricing Tiers</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="footer-col-title">Portal & Access</h4>
+              <ul class="footer-links">
+                <li><a href="login.html">Member Sign In</a></li>
+                <li><a href="contact.html">Book Private Tour</a></li>
+                <li><a href="pricing.html">Cost Estimator</a></li>
+                <li><a href="contact.html">VIP Concierge</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="footer-col-title">Contact & Hubs</h4>
+              <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">100 Apex Way, Suite 400<br>Downtown HQ Flagship<br><strong style="color:var(--volt-primary);">+1 (800) 555-APEX</strong></p>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <span>&copy; 2026 Apex Volt Fitness Club Inc. All Rights Reserved.</span>
+            <div style="display:flex; gap:16px;">
+              <a href="#" style="color:var(--text-dim); text-decoration:none;">Privacy Policy</a>
+              <a href="#" style="color:var(--text-dim); text-decoration:none;">Terms of Service</a>
+              <a href="#" style="color:var(--text-dim); text-decoration:none;">Security Notice</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- VIP Modal -->
+  <div class="modal-overlay" id="vip-modal">
+    <div class="modal-box">
+      <button class="modal-close">✕</button>
+      <div class="tagline">// VIP PASS</div>
+      <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.6rem; margin-bottom:12px;">CLAIM YOUR 7-DAY VIP PASS</h3>
+      <form onsubmit="event.preventDefault(); alert('VIP Pass Unlocked!'); document.getElementById('vip-modal').classList.remove('active');">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-input" required placeholder="Alex Mercer">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-input" required placeholder="alex@apex.com">
+        </div>
+        <button type="submit" class="btn-volt" style="width:100%; justify-content:center; margin-top:10px;">Get Digital Pass</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/animations.js"></script>
+  <script>
+    function setGoal(goal) {
+      document.querySelectorAll('.goal-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      const box = document.getElementById('coach-match-display');
+      if (goal === 'hypertrophy') {
+        box.innerHTML = '<div style="font-weight:800; color:var(--volt-primary); margin-bottom:4px;">MATCHED COACH: Marcus Vance</div><div style="font-size:0.85rem; color:var(--text-muted);">IFBB Pro & Biomechanics Lead • 12+ Yrs Experience</div>';
+      } else if (goal === 'fatloss') {
+        box.innerHTML = '<div style="font-weight:800; color:var(--cyan-accent); margin-bottom:4px;">MATCHED COACH: Elena Rostova</div><div style="font-size:0.85rem; color:var(--text-muted);">Metabolic Conditioning & Conditioning Specialist</div>';
+      } else {
+        box.innerHTML = '<div style="font-weight:800; color:var(--crimson-pulse); margin-bottom:4px;">MATCHED COACH: Jaxson Drake</div><div style="font-size:0.85rem; color:var(--text-muted);">Ex-NFL Performance Coach & Sprint Lead</div>';
+      }
+    }
+
+    function updateSpaTherapy(type, temp, time, desc) {
+      document.getElementById('spa-temp').textContent = temp;
+      document.getElementById('spa-time').textContent = time;
+      document.getElementById('spa-desc').textContent = desc;
+    }
+
+    function calcMacros() {
+      const w = parseInt(document.getElementById('macro-weight-slider').value);
+      document.getElementById('weight-label').textContent = `${w} lbs`;
+      document.getElementById('protein-val').textContent = `${w}g`;
+      document.getElementById('carbs-val').textContent = `${Math.round(w * 1.25)}g`;
+      document.getElementById('fats-val').textContent = `${Math.round(w * 0.35)}g`;
+    }
+  </script>
+</body>
+</html>

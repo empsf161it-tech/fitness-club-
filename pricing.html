@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Volt Membership & Pricing | Flexible Tiers & Custom Estimator</title>
+  <meta name="description" content="Choose your Apex Volt membership: Day Pass, Core Volt, Apex VIP, or All-Access Supremacy. Calculate custom pricing and claim a 30-day money-back guarantee.">
+  
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <header class="main-header">
+    <a href="index.html" class="logo">
+      <div class="logo-badge">A</div>
+      <span>APEX<span style="color:var(--volt-primary)">VOLT</span></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="login.html" class="nav-link">Member Portal</a></li>
+    </ul>
+
+    <div class="header-actions">
+      <button class="btn-volt" data-modal="vip-modal">VIP Pass</button>
+      <button class="mobile-toggle" aria-label="Toggle Navigation">☰</button>
+    </div>
+  </header>
+
+  <aside class="section-nav-tracker">
+    <div class="tracker-dot active" data-title="01. Membership Tiers"></div>
+    <div class="tracker-dot" data-title="02. Cost Estimator"></div>
+    <div class="tracker-dot" data-title="03. Corporate Plans"></div>
+    <div class="tracker-dot" data-title="04. Access Matrix"></div>
+    <div class="tracker-dot" data-title="05. Guarantee & FAQ"></div>
+  </aside>
+
+  <div class="section-counter-badge">
+    <span class="current">01</span> / <span class="total">05</span>
+  </div>
+
+  <main class="page-container">
+
+    <!-- SECTION 1: TIERED MEMBERSHIP CARDS -->
+    <section class="full-section" id="tiers">
+      <div class="section-bg">
+        <img src="images/pricing_contact_bg.png" alt="Membership Pricing Sanctuary">
+      </div>
+
+      <div class="section-content">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; margin-bottom:16px;">
+          <div>
+            <div class="tagline">// SECTION 01</div>
+            <h1 class="section-title" style="margin-bottom:0;">MEMBERSHIP <span class="highlight">TIERS</span></h1>
+          </div>
+
+          <!-- Billing Switcher -->
+          <div style="display:flex; align-items:center; gap:12px; background:rgba(255,255,255,0.05); padding:8px 16px; border-radius:30px; border:1px solid var(--border-subtle);">
+            <span style="font-size:0.85rem; font-weight:700; color:var(--text-muted);">Monthly</span>
+            <label style="position:relative; display:inline-block; width:44px; height:24px;">
+              <input type="checkbox" id="billing-toggle" style="opacity:0; width:0; height:0;">
+              <span style="position:absolute; cursor:pointer; inset:0; background:rgba(255,255,255,0.2); border-radius:24px; transition:0.3s;" onclick="this.previousElementSibling.click();"></span>
+            </label>
+            <span style="font-size:0.85rem; font-weight:700; color:var(--volt-primary);">Annual (Save 20%)</span>
+          </div>
+        </div>
+
+        <div class="grid-4">
+          <!-- Tier 1: Day Pass -->
+          <div class="glass-card">
+            <h3 style="color:#fff; font-family:var(--font-heading); font-size:1.2rem; margin-bottom:4px;">Day Pass</h3>
+            <div style="margin-bottom:16px;">
+              <span class="pricing-value" data-monthly="$35" data-annual="$35" style="font-family:var(--font-heading); font-size:2.2rem; font-weight:900; color:#fff;">$35</span>
+              <span style="color:var(--text-dim); font-size:0.8rem;">/ single drop-in</span>
+            </div>
+            <ul style="list-style:none; color:var(--text-muted); font-size:0.85rem; display:flex; flex-direction:column; gap:8px; margin-bottom:20px;">
+              <li>✓ Single Day Gym Access</li>
+              <li>✓ Locker & Towel Service</li>
+              <li>✓ 1 Class Included</li>
+              <li style="color:var(--text-dim); text-decoration:line-through;">✕ Spa Lounge Access</li>
+            </ul>
+            <button class="btn-outline" data-modal="vip-modal" style="width:100%; justify-content:center; padding:10px;">Get Day Pass</button>
+          </div>
+
+          <!-- Tier 2: Core Volt -->
+          <div class="glass-card">
+            <h3 style="color:#fff; font-family:var(--font-heading); font-size:1.2rem; margin-bottom:4px;">Core Volt</h3>
+            <div style="margin-bottom:16px;">
+              <span class="pricing-value" data-monthly="$89" data-annual="$71" style="font-family:var(--font-heading); font-size:2.2rem; font-weight:900; color:var(--volt-primary);">$89</span>
+              <span style="color:var(--text-dim); font-size:0.8rem;">/ month</span>
+            </div>
+            <ul style="list-style:none; color:var(--text-muted); font-size:0.85rem; display:flex; flex-direction:column; gap:8px; margin-bottom:20px;">
+              <li>✓ 24/7 Single Hub Access</li>
+              <li>✓ Unlimited Functional HIIT</li>
+              <li>✓ Telemetry App Sync</li>
+              <li>✓ 1 Cryo Session / Mo</li>
+            </ul>
+            <button class="btn-volt" data-modal="vip-modal" style="width:100%; justify-content:center; padding:10px;">Join Core Volt</button>
+          </div>
+
+          <!-- Tier 3: Apex VIP (Popular) -->
+          <div class="glass-card" style="border-color:var(--volt-primary); box-shadow:0 0 25px rgba(204,255,0,0.2);">
+            <div style="background:var(--volt-primary); color:#000; font-weight:900; font-size:0.7rem; padding:3px 8px; border-radius:4px; text-transform:uppercase; display:inline-block; margin-bottom:6px;">MOST POPULAR</div>
+            <h3 style="color:#fff; font-family:var(--font-heading); font-size:1.2rem; margin-bottom:4px;">Apex VIP</h3>
+            <div style="margin-bottom:16px;">
+              <span class="pricing-value" data-monthly="$149" data-annual="$119" style="font-family:var(--font-heading); font-size:2.2rem; font-weight:900; color:var(--volt-primary);">$149</span>
+              <span style="color:var(--text-dim); font-size:0.8rem;">/ month</span>
+            </div>
+            <ul style="list-style:none; color:var(--text-muted); font-size:0.85rem; display:flex; flex-direction:column; gap:8px; margin-bottom:20px;">
+              <li>✓ All 4 Flagship Hubs Access</li>
+              <li>✓ Unlimited Classes & HIIT</li>
+              <li>✓ Unlimited Cryo & Sauna</li>
+              <li>✓ 2 PT Sessions / Month</li>
+            </ul>
+            <button class="btn-volt" data-modal="vip-modal" style="width:100%; justify-content:center; padding:10px;">Claim VIP Tier</button>
+          </div>
+
+          <!-- Tier 4: All-Access Supremacy -->
+          <div class="glass-card">
+            <h3 style="color:#fff; font-family:var(--font-heading); font-size:1.2rem; margin-bottom:4px;">Supremacy</h3>
+            <div style="margin-bottom:16px;">
+              <span class="pricing-value" data-monthly="$229" data-annual="$183" style="font-family:var(--font-heading); font-size:2.2rem; font-weight:900; color:var(--cyan-accent);">$229</span>
+              <span style="color:var(--text-dim); font-size:0.8rem;">/ month</span>
+            </div>
+            <ul style="list-style:none; color:var(--text-muted); font-size:0.85rem; display:flex; flex-direction:column; gap:8px; margin-bottom:20px;">
+              <li>✓ Unlimited Everything</li>
+              <li>✓ Dedicated Private Locker</li>
+              <li>✓ Weekly Nutrition Meal Prep</li>
+              <li>✓ VIP Concierge Hotline</li>
+            </ul>
+            <button class="btn-outline" data-modal="vip-modal" style="width:100%; justify-content:center; padding:10px;">Get Supremacy</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTERACTIVE CUSTOM MEMBERSHIP ESTIMATOR -->
+    <section class="full-section" id="estimator">
+      <div class="section-bg">
+        <img src="images/disciplines_bg.png" alt="Membership Estimator Base">
+      </div>
+
+      <div class="section-content">
+        <div class="grid-2">
+          <div>
+            <div class="tagline">// SECTION 02</div>
+            <h2 class="section-title">CUSTOM MEMBERSHIP <span class="highlight">ESTIMATOR</span></h2>
+            <p class="section-desc">
+              Tailor your membership to your exact routine. Adjust days per week, trainer sessions, and recovery spa access.
+            </p>
+
+            <div class="stat-card" style="margin-top:20px; text-align:left; background:rgba(204,255,0,0.05); border-color:var(--border-glow);">
+              <span style="font-size:0.85rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px; display:block;">Estimated Custom Monthly Plan:</span>
+              <div id="estimated-price" style="font-family:var(--font-heading); font-size:3.5rem; font-weight:900; color:var(--volt-primary);">$157</div>
+              <span style="font-size:0.8rem; color:var(--text-dim);">*No lock-in contracts. Cancel anytime with 30 days notice.</span>
+            </div>
+          </div>
+
+          <!-- Sliders -->
+          <div class="glass-card">
+            <div class="form-group" style="margin-bottom:24px;">
+              <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                <label>Gym Visits / Week</label>
+                <span id="days-val" style="color:var(--volt-primary); font-weight:800;">4 Days / Wk</span>
+              </div>
+              <input type="range" id="days-slider" min="1" max="7" value="4" style="width:100%; accent-color:var(--volt-primary);">
+            </div>
+
+            <div class="form-group" style="margin-bottom:24px;">
+              <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+                <label>1-on-1 PT Sessions / Month</label>
+                <span id="pt-val" style="color:var(--cyan-accent); font-weight:800;">2 Sessions</span>
+              </div>
+              <input type="range" id="pt-slider" min="0" max="8" value="2" style="width:100%; accent-color:var(--cyan-accent);">
+            </div>
+
+            <div style="display:flex; align-items:center; gap:12px; margin-top:20px; background:rgba(255,255,255,0.03); padding:14px; border-radius:8px;">
+              <input type="checkbox" id="spa-check" checked style="width:18px; height:18px; accent-color:var(--volt-primary);">
+              <div>
+                <strong style="color:#fff; font-size:0.9rem; display:block;">Include Unlimited Cryotherapy Spa Access</strong>
+                <span style="color:var(--text-dim); font-size:0.8rem;">Infrared saunas, cold plunge pools & cryo chambers (+$40/mo)</span>
+              </div>
+            </div>
+
+            <button class="btn-volt" data-modal="vip-modal" style="width:100%; justify-content:center; margin-top:24px;">Lock In This Custom Plan</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CORPORATE & GROUP WELLNESS -->
+    <section class="full-section" id="corporate">
+      <div class="section-bg">
+        <img src="images/coaching_about_bg.png" alt="Corporate Group Wellness Lounge">
+      </div>
+
+      <div class="section-content">
+        <div class="grid-2">
+          <div>
+            <div class="tagline">// SECTION 03</div>
+            <h2 class="section-title">CORPORATE & <span class="highlight">GROUP WELLNESS</span></h2>
+            <p class="section-desc">
+              Empower your corporate executive team with high-performance fitness memberships, private team-building challenges, and metabolic health reporting.
+            </p>
+            <button class="btn-volt" onclick="alert('Corporate Team Request Triggered! Our concierge will email you custom options.');">Request Corporate Proposal</button>
+          </div>
+
+          <div class="grid-2">
+            <div class="glass-card">
+              <h4 style="color:var(--volt-primary); margin-bottom:6px;">Team Leaderboards</h4>
+              <p style="font-size:0.85rem; color:var(--text-muted);">Gamified monthly calorie and attendance leaderboards for your company.</p>
+            </div>
+            <div class="glass-card">
+              <h4 style="color:var(--cyan-accent); margin-bottom:6px;">Executive Health Scans</h4>
+              <p style="font-size:0.85rem; color:var(--text-muted);">Quarterly DEXA scans and metabolic biomarkers for key personnel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: ACCESS MATRIX -->
+    <section class="full-section" id="matrix">
+      <div class="section-bg">
+        <img src="images/hero_fitness_gym.png" alt="Feature Access Matrix Floor">
+      </div>
+
+      <div class="section-content">
+        <div class="tagline">// SECTION 04</div>
+        <h2 class="section-title">FEATURE & <span class="highlight">ACCESS MATRIX</span></h2>
+
+        <div style="overflow-x:auto; background:var(--bg-card); border-radius:12px; border:1px solid var(--border-subtle); padding:20px; backdrop-filter:blur(16px);">
+          <table style="width:100%; border-collapse:collapse; text-align:left; font-size:0.9rem;">
+            <thead>
+              <tr style="border-bottom:1px solid var(--border-subtle); color:var(--volt-primary);">
+                <th style="padding:12px;">Feature</th>
+                <th style="padding:12px;">Day Pass</th>
+                <th style="padding:12px;">Core Volt</th>
+                <th style="padding:12px;">Apex VIP</th>
+                <th style="padding:12px;">Supremacy</th>
+              </tr>
+            </thead>
+            <tbody style="color:var(--text-muted);">
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                <td style="padding:12px; color:#fff;">24/7 Access</td>
+                <td style="padding:12px;">✕</td>
+                <td style="padding:12px;">✓ Single Hub</td>
+                <td style="padding:12px;">✓ All Hubs</td>
+                <td style="padding:12px;">✓ All Hubs</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                <td style="padding:12px; color:#fff;">HIIT & Class Access</td>
+                <td style="padding:12px;">1 Class</td>
+                <td style="padding:12px;">Unlimited</td>
+                <td style="padding:12px;">Unlimited</td>
+                <td style="padding:12px;">Unlimited VIP</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                <td style="padding:12px; color:#fff;">Cryotherapy Lounge</td>
+                <td style="padding:12px;">✕</td>
+                <td style="padding:12px;">1 Session/Mo</td>
+                <td style="padding:12px;">Unlimited</td>
+                <td style="padding:12px;">Unlimited VIP</td>
+              </tr>
+              <tr>
+                <td style="padding:12px; color:#fff;">Private Locker Rental</td>
+                <td style="padding:12px;">Day Locker</td>
+                <td style="padding:12px;">Day Locker</td>
+                <td style="padding:12px;">Day Locker</td>
+                <td style="padding:12px;">Dedicated Locker</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: GUARANTEE & FAQ -->
+    <section class="full-section" id="guarantee">
+      <div class="section-bg">
+        <img src="images/recovery_spa_cryo.png" alt="Guarantee Lounge">
+      </div>
+      <div class="section-content" style="text-align:center; align-items:center;">
+        <div class="tagline" style="margin:0 auto 12px auto;">// SECTION 05</div>
+        <h2 class="section-title" style="max-width:800px;">30-DAY ZERO RISK <span class="highlight">GUARANTEE</span></h2>
+        <p class="section-desc" style="margin:0 auto 30px auto;">
+          If you don't experience a noticeable transformation in your energy and physical metrics within your first 30 days, we refund 100% of your membership fees.
+        </p>
+
+        <button class="btn-volt" data-modal="vip-modal" style="font-size:1.1rem; padding:16px 36px;">Claim Risk-Free VIP Trial Pass</button>
+
+        <!-- Site Footer Component -->
+        <footer class="site-footer">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a href="index.html" class="logo" style="font-size:1.3rem;">
+                <div class="logo-badge" style="width:30px; height:30px; font-size:1rem;">A</div>
+                <span>APEX<span style="color:var(--volt-primary)">VOLT</span></span>
+              </a>
+              <p style="font-size:0.8rem; color:var(--text-muted); margin-top:6px;">Ultra-luxury high-performance sanctuary engineered for physical and mental supremacy.</p>
+            </div>
+
+            <div>
+              <h4 class="footer-col-title">Navigation</h4>
+              <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="pricing.html">Pricing Tiers</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="footer-col-title">Portal & Access</h4>
+              <ul class="footer-links">
+                <li><a href="login.html">Member Sign In</a></li>
+                <li><a href="contact.html">Book Private Tour</a></li>
+                <li><a href="pricing.html">Cost Estimator</a></li>
+                <li><a href="contact.html">VIP Concierge</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="footer-col-title">Contact & Hubs</h4>
+              <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">100 Apex Way, Suite 400<br>Downtown HQ Flagship<br><strong style="color:var(--volt-primary);">+1 (800) 555-APEX</strong></p>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <span>&copy; 2026 Apex Volt Fitness Club Inc. All Rights Reserved.</span>
+            <div style="display:flex; gap:16px;">
+              <a href="#" style="color:var(--text-dim); text-decoration:none;">Privacy Policy</a>
+              <a href="#" style="color:var(--text-dim); text-decoration:none;">Terms of Service</a>
+              <a href="#" style="color:var(--text-dim); text-decoration:none;">Security Notice</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="modal-overlay" id="vip-modal">
+    <div class="modal-box">
+      <button class="modal-close">✕</button>
+      <div class="tagline">// VIP PASS</div>
+      <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.6rem; margin-bottom:12px;">CLAIM YOUR 7-DAY VIP PASS</h3>
+      <form onsubmit="event.preventDefault(); alert('VIP Pass Unlocked!'); document.getElementById('vip-modal').classList.remove('active');">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-input" required placeholder="Alex Mercer">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-input" required placeholder="alex@apex.com">
+        </div>
+        <button type="submit" class="btn-volt" style="width:100%; justify-content:center; margin-top:10px;">Get Digital Pass</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

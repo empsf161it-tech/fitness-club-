@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Apex Volt | VIP Concierge, Hub Locator & Tour Booking</title>
+  <meta name="description" content="Get in touch with Apex Volt Fitness Club concierge team. Book a private tour, check live club operational hours, peak crowd charts, and location maps.">
+  
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <header class="main-header">
+    <a href="index.html" class="logo">
+      <div class="logo-badge">A</div>
+      <span>APEX<span style="color:var(--volt-primary)">VOLT</span></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      <li><a href="login.html" class="nav-link">Member Portal</a></li>
+    </ul>
+
+    <div class="header-actions">
+      <button class="btn-volt" data-modal="vip-modal">VIP Pass</button>
+      <button class="mobile-toggle" aria-label="Toggle Navigation">☰</button>
+    </div>
+  </header>
+
+  <aside class="section-nav-tracker">
+    <div class="tracker-dot active" data-title="01. Club Locator"></div>
+    <div class="tracker-dot" data-title="02. VIP Concierge"></div>
+    <div class="tracker-dot" data-title="03. Operational Hours"></div>
+    <div class="tracker-dot" data-title="04. FAQ Matrix"></div>
+    <div class="tracker-dot" data-title="05. Directions & Map"></div>
+  </aside>
+
+  <div class="section-counter-badge">
+    <span class="current">01</span> / <span class="total">05</span>
+  </div>
+
+  <main class="page-container">    <!-- SECTION 1: CLUB LOCATOR & TOUR BOOKER -->
+    <section class="full-section" id="locator">
+      <div class="section-bg">
+        <img src="images/pricing_contact_bg.png" alt="Apex Hub Locator Floor">
+      </div>
+
+      <div class="section-content">
+        <div class="grid-2">
+          <div>
+            <div class="tagline">// SECTION 01</div>
+            <h1 class="section-title">FIND YOUR <span class="highlight">APEX HUB</span></h1>
+            <p class="section-desc">
+              Schedule a guided 1-on-1 walkthrough tour with a master coach at any of our 4 flagship luxury locations.
+            </p>
+
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <button class="btn-outline loc-btn active" onclick="switchLoc('Downtown HQ', '100 Apex Way, Suite 400', '142 Athletes')" style="text-align:left; justify-content:space-between;">
+                <span style="display:flex; align-items:center; gap:8px;">
+                  <img src="images/hub-downtown.jpg" alt="Downtown HQ" class="icon-img-placeholder" style="margin-bottom:0; width:28px; height:28px;">
+                  Downtown HQ Flagship
+                </span>
+                <span style="color:var(--volt-primary); font-size:0.8rem;">OPEN • 142 Active</span>
+              </button>
+              <button class="btn-outline loc-btn" onclick="switchLoc('Uptown Athletic Center', '550 Skyline Blvd', '88 Athletes')" style="text-align:left; justify-content:space-between;">
+                <span style="display:flex; align-items:center; gap:8px;">
+                  <img src="images/hub-uptown.jpg" alt="Uptown Athletic" class="icon-img-placeholder" style="margin-bottom:0; width:28px; height:28px;">
+                  Uptown Athletic Hub
+                </span>
+                <span style="color:var(--cyan-accent); font-size:0.8rem;">OPEN • 88 Active</span>
+              </button>
+              <button class="btn-outline loc-btn" onclick="switchLoc('Westside Bay Club', '22 Ocean Drive', '95 Athletes')" style="text-align:left; justify-content:space-between;">
+                <span style="display:flex; align-items:center; gap:8px;">
+                  <img src="images/hub-westside.jpg" alt="Westside Bay" class="icon-img-placeholder" style="margin-bottom:0; width:28px; height:28px;">
+                  Westside Bay Club
+                </span>
+                <span style="color:var(--volt-primary); font-size:0.8rem;">OPEN • 95 Active</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Tour Booking Card -->
+          <div class="glass-card">
+            <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.3rem; margin-bottom:8px;">Schedule Guided Private Tour</h3>
+            <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:16px;">Selected Hub: <strong id="selected-loc-name" style="color:var(--volt-primary);">Downtown HQ Flagship</strong></p>
+
+            <form onsubmit="event.preventDefault(); alert('Tour Reservation Confirmed! We look forward to meeting you.');">
+              <div class="form-group">
+                <label>Preferred Date & Time</label>
+                <input type="datetime-local" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" class="form-input" placeholder="+1 (555) 000-0000" required>
+              </div>
+              <button type="submit" class="btn-volt" style="width:100%; justify-content:center;">Book Tour & Claim VIP Trial</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: DIRECT CONCIERGE FORM -->
+    <section class="full-section" id="concierge">
+      <div class="section-bg">
+        <img src="images/coaching_about_bg.png" alt="VIP Concierge Desk">
+      </div>
+
+      <div class="section-content">
+        <div class="grid-2">
+          <div>
+            <div class="tagline">// SECTION 02</div>
+            <h2 class="section-title">VIP CONCIERGE <span class="highlight">INQUIRY</span></h2>
+            <p class="section-desc">
+              Have questions regarding custom memberships, corporate health plans, or private coaching? Drop us a line.
+            </p>
+
+            <div style="margin-top:20px; display:flex; flex-direction:column; gap:12px;">
+              <div>
+                <span style="color:var(--text-dim); font-size:0.8rem; display:block;">DIRECT PHONE</span>
+                <strong style="color:#fff; font-size:1.1rem;">+1 (800) 555-APEX</strong>
+              </div>
+              <div>
+                <span style="color:var(--text-dim); font-size:0.8rem; display:block;">EMAIL INQUIRIES</span>
+                <strong style="color:var(--volt-primary); font-size:1.1rem;">concierge@apexvolt.com</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <form onsubmit="event.preventDefault(); alert('Message sent to Apex VIP Concierge! We reply within 2 hours.');">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" class="form-input" required placeholder="Alex Mercer">
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" class="form-input" required placeholder="alex@domain.com">
+              </div>
+              <div class="form-group">
+                <label>Inquiry Topic</label>
+                <select class="form-input">
+                  <option>Membership Options</option>
+                  <option>1-on-1 Personal Coaching</option>
+                  <option>Corporate Wellness Program</option>
+                  <option>Cryotherapy Spa Packages</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Message</label>
+                <textarea class="form-input" rows="3" placeholder="How can we assist your athletic journey?" required></textarea>
+              </div>
+              <button type="submit" class="btn-volt" style="width:100%; justify-content:center;">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: OPERATING HOURS & LIVE PEAK GRAPH -->
+    <section class="full-section" id="hours">
+      <div class="section-bg">
+        <img src="images/class_schedule_bg.png" alt="Operational Hours Hub">
+      </div>
+
+      <div class="section-content">
+        <div class="grid-2">
+          <div>
+            <div class="tagline">// SECTION 03</div>
+            <h2 class="section-title">OPERATING HOURS & <span class="highlight">LIVE CROWD METRICS</span></h2>
+            <p class="section-desc">
+              All flagships feature 24/7 keycard access for Apex VIP and Supremacy members. General concierge hours listed below.
+            </p>
+
+            <div style="background:rgba(204,255,0,0.08); border:1px solid var(--volt-primary); border-radius:10px; padding:16px; display:inline-flex; align-items:center; gap:12px; margin-top:10px;">
+              <span style="width:12px; height:12px; border-radius:50%; background:var(--volt-primary); box-shadow:0 0 12px var(--volt-primary);"></span>
+              <span style="color:#fff; font-weight:800; font-size:0.95rem;">LIVE STATUS: OPEN NOW (Closes at 11:00 PM)</span>
+            </div>
+          </div>
+
+          <!-- Crowd Density Chart Simulator -->
+          <div class="glass-card">
+            <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.2rem; margin-bottom:12px;">Average Daily Crowd Density</h3>
+            
+            <div style="display:flex; align-items:flex-end; gap:8px; height:140px; margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid var(--border-subtle);">
+              <div style="flex:1; background:rgba(204,255,0,0.8); height:85%; border-radius:4px;" title="06:00 AM - PEAK"></div>
+              <div style="flex:1; background:rgba(204,255,0,0.4); height:45%; border-radius:4px;" title="09:00 AM - MODERATE"></div>
+              <div style="flex:1; background:rgba(204,255,0,0.2); height:25%; border-radius:4px;" title="12:00 PM - LOW"></div>
+              <div style="flex:1; background:rgba(204,255,0,0.3); height:35%; border-radius:4px;" title="03:00 PM - MODERATE"></div>
+              <div style="flex:1; background:rgba(255,42,95,0.9); height:95%; border-radius:4px;" title="06:00 PM - HIGH PEAK"></div>
+              <div style="flex:1; background:rgba(204,255,0,0.5); height:55%; border-radius:4px;" title="09:00 PM - MODERATE"></div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-muted);">
+              <span>06 AM (Peak)</span>
+              <span>12 PM (Low)</span>
+              <span>06 PM (Peak)</span>
+              <span>10 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: FAQ MATRIX -->
+    <section class="full-section" id="faq">
+      <div class="section-bg">
+        <img src="images/disciplines_bg.png" alt="FAQ Matrix Base">
+      </div>
+
+      <div class="section-content">
+        <div class="tagline">// SECTION 04</div>
+        <h2 class="section-title">FREQUENTLY ASKED <span class="highlight">QUESTIONS</span></h2>
+
+        <div class="grid-2" style="margin-top:20px;">
+          <div class="glass-card">
+            <h4 style="color:var(--volt-primary); margin-bottom:6px;">Is parking included?</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Yes, all Apex Volt locations offer 2 hours of complimentary underground garage valet parking for members.</p>
+          </div>
+
+          <div class="glass-card">
+            <h4 style="color:var(--cyan-accent); margin-bottom:6px;">Can I bring a guest?</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Apex VIP and Supremacy tier members receive 4 complimentary guest passes per month.</p>
+          </div>
+
+          <div class="glass-card">
+            <h4 style="color:var(--crimson-pulse); margin-bottom:6px;">What is the cancellation policy?</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">We offer flexible month-to-month memberships. Cancel anytime with a 30-day written notice—no hidden fees.</p>
+          </div>
+
+          <div class="glass-card">
+            <h4 style="color:var(--volt-primary); margin-bottom:6px;">Are lockers available?</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Every member receives access to electronic RFID keycard day lockers, rainfall showers, and Malin+Goetz toiletries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: MAP & DIRECTIONS -->
+    <section class="full-section" id="map">
+      <div class="section-bg">
+        <img src="images/hero_fitness_gym.png" alt="Flagship Map Base">
+      </div>
+      <div class="section-content" style="text-align:center; align-items:center;">
+        <div class="tagline" style="margin:0 auto 12px auto;">// SECTION 05</div>
+        <h2 class="section-title" style="max-width:800px;">VISIT OUR <span class="highlight">FLAGSHIP SANCTUARY</span></h2>
+        
+        <div style="background:var(--bg-card); border:1px solid var(--border-glow); border-radius:16px; padding:30px; max-width:800px; width:100%; backdrop-filter:blur(16px); margin-top:20px;">
+          <div style="font-family:var(--font-heading); color:#fff; font-size:1.3rem; font-weight:800; margin-bottom:4px;">Downtown HQ Flagship</div>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:20px;">100 Apex Way, Suite 400 • Valet Entrance on 2nd Street</p>
+
+          <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+            <button class="btn-volt" onclick="alert('Opening GPS Directions in Google Maps...');">Navigate via Google Maps</button>
+            <button class="btn-outline" onclick="alert('Valet Reservation Code: #APEX-VALET-2026');">Claim Valet Code</button>
+          </div>
+        </div>
+
+        <!-- Site Footer Component -->
+        <footer class="site-footer">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a href="index.html" class="logo" style="font-size:1.3rem;">
+                <div class="logo-badge" style="width:30px; height:30px; font-size:1rem;">A</div>
+                <span>APEX<span style="color:var(--volt-primary)">VOLT</span></span>
+              </a>
+              <p style="font-size:0.8rem; color:var(--text-muted); margin-top:6px;">Ultra-luxury high-performance sanctuary engineered for physical and mental supremacy.</p>
+            </div>
+
+            <div>
+              <h4 class="footer-col-title">Navigation</h4>
+              <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="pricing.html">Pricing Tiers</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="footer-col-title">Portal & Access</h4>
+              <ul class="footer-links">
+                <li><a href="login.html">Member Sign In</a></li>
+                <li><a href="contact.html">Book Private Tour</a></li>
+                <li><a href="pricing.html">Cost Estimator</a></li>
+                <li><a href="contact.html">VIP Concierge</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="footer-col-title">Contact & Hubs</h4>
+              <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">100 Apex Way, Suite 400<br>Downtown HQ Flagship<br><strong style="color:var(--volt-primary);">+1 (800) 555-APEX</strong></p>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <span>&copy; 2026 Apex Volt Fitness Club Inc. All Rights Reserved.</span>
+            <div style="display:flex; gap:16px;">
+              <a href="#" style="color:var(--text-dim); text-decoration:none;">Privacy Policy</a>
+              <a href="#" style="color:var(--text-dim); text-decoration:none;">Terms of Service</a>
+              <a href="#" style="color:var(--text-dim); text-decoration:none;">Security Notice</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="modal-overlay" id="vip-modal">
+    <div class="modal-box">
+      <button class="modal-close">✕</button>
+      <div class="tagline">// VIP PASS</div>
+      <h3 style="font-family:var(--font-heading); color:#fff; font-size:1.6rem; margin-bottom:12px;">CLAIM YOUR 7-DAY VIP PASS</h3>
+      <form onsubmit="event.preventDefault(); alert('VIP Pass Unlocked!'); document.getElementById('vip-modal').classList.remove('active');">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-input" required placeholder="Alex Mercer">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-input" required placeholder="alex@apex.com">
+        </div>
+        <button type="submit" class="btn-volt" style="width:100%; justify-content:center; margin-top:10px;">Get Digital Pass</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/animations.js"></script>
+  <script>
+    function switchLoc(name, addr, active) {
+      document.querySelectorAll('.loc-btn').forEach(b => b.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+      document.getElementById('selected-loc-name').textContent = name;
+    }
+  </script>
+</body>
+</html>

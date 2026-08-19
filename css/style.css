@@ -20,10 +20,10 @@
   --crimson-pulse: #ff2a5f;
   
   --text-main: #ffffff;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
+  --text-muted: #cbd5e1;
+  --text-dim: #94a3b8;
   
-  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.12);
   --border-glow: rgba(204, 255, 0, 0.4);
   
   /* Fonts & Typography */
@@ -57,7 +57,8 @@ html {
 body {
   overflow-x: hidden;
   position: relative;
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   background-color: var(--bg-dark);
   background-image: 
     radial-gradient(circle at 15% 15%, rgba(204, 255, 0, 0.04) 0%, transparent 45%),
@@ -79,16 +80,18 @@ body {
 
 /* Container for Full Page Snap Scrolling */
 .page-container {
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
-/* Full Screen Section Requirement (100vh x 100vw min-height snap) */
+/* Full Screen Section Requirement (100vh min-height snap) */
 .full-section {
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
   min-height: 100vh;
   position: relative;
   display: flex;
@@ -157,7 +160,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: var(--header-height);
   z-index: 100;
   display: flex;
@@ -738,55 +741,160 @@ body {
   text-align: left;
 }
 
-@media (max-width: 900px) {
-  .site-footer {
-    padding: 24px 4% 20px 4%;
-  }
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-}
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES & MOBILE FIXES
+   ========================================================================== */
 
-/* Responsive Media Queries */
 @media (max-width: 1100px) {
   .grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   :root {
     --header-height: 70px;
   }
-  .full-section {
-    padding: calc(var(--header-height) + 20px) 4% 40px 4%;
+
+  /* Un-constrain mandatory snap scroll on mobile so stacked vertical content doesn't get cut off */
+  html, body {
+    height: auto;
+    overflow-x: hidden;
   }
+
+  .page-container {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: visible;
+    scroll-snap-type: none;
+  }
+
+  .full-section {
+    width: 100%;
+    min-height: auto;
+    height: auto;
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+    padding: calc(var(--header-height) + 24px) 5% 50px 5%;
+  }
+
+  .full-section:last-of-type {
+    justify-content: flex-start;
+  }
+
+  /* Mobile Drawer Navigation */
   .nav-links {
     position: fixed;
     top: var(--header-height);
     right: -100%;
-    width: 80vw;
+    width: 82vw;
+    max-width: 340px;
     height: calc(100vh - var(--header-height));
     background: #0b0d14;
     flex-direction: column;
-    padding: 40px;
-    transition: right 0.4s ease;
+    padding: 30px 24px;
+    gap: 20px;
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     border-left: 1px solid var(--border-subtle);
+    box-shadow: -15px 0 35px rgba(0, 0, 0, 0.85);
+    z-index: 105;
+    overflow-y: auto;
   }
+
   .nav-links.mobile-open {
     right: 0;
   }
+
+  .nav-link {
+    font-size: 1.05rem;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+  }
+
   .mobile-toggle {
     display: block;
   }
+
+  /* Grid Layout Fallbacks */
   .grid-2, .grid-3, .grid-4 {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
+
   .section-nav-tracker {
     display: none;
   }
+
+  /* Reposition section counter badge so it doesn't obscure content */
+  .section-counter-badge {
+    left: 16px;
+    bottom: 16px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    transform: scale(0.88);
+    transform-origin: bottom left;
+    background: rgba(16, 18, 27, 0.9);
+    z-index: 80;
+  }
+
+  /* Typography Adjustments for Mobile */
+  .tagline {
+    font-size: 0.78rem;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+  }
+
   .section-title {
-    font-size: 2.1rem;
+    font-size: clamp(1.75rem, 6vw, 2.3rem);
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+
+  .section-desc {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+
+  /* Footer Adjustments */
+  .site-footer {
+    padding: 24px 4% 20px 4%;
+    margin-top: 30px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  /* Interactive Components Adjustments */
+  .ba-slider-container {
+    height: 220px !important;
   }
 }
+
+@media (max-width: 550px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .btn-volt, .btn-outline {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+  }
+
+  .logo {
+    font-size: 1.35rem;
+  }
+
+  .logo-badge {
+    width: 34px;
+    height: 34px;
+    font-size: 1.1rem;
+  }
+}
+

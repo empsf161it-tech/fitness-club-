@@ -18,14 +18,16 @@ function initGSAPAnimations() {
     gsap.registerPlugin(ScrollTrigger);
   }
 
+  const isMobile = window.innerWidth <= 900;
+
   // Initial Hero Fade In
   gsap.from('.hero-content > *', {
-    y: 40,
+    y: 30,
     opacity: 0,
-    duration: 1,
-    stagger: 0.15,
+    duration: 0.8,
+    stagger: 0.12,
     ease: 'power3.out',
-    delay: 0.2
+    delay: 0.1
   });
 
   // Stagger glass cards
@@ -33,14 +35,15 @@ function initGSAPAnimations() {
     const cards = grid.querySelectorAll('.glass-card, .stat-card');
     if (cards.length) {
       gsap.from(cards, {
-        y: 35,
+        y: 25,
         opacity: 0,
-        duration: 0.8,
-        stagger: 0.12,
+        duration: 0.7,
+        stagger: 0.08,
         ease: 'power2.out',
         scrollTrigger: {
           trigger: grid,
-          start: 'top 80%'
+          start: isMobile ? 'top 95%' : 'top 85%',
+          once: true
         }
       });
     }

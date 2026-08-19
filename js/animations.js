@@ -18,41 +18,22 @@ function initGSAPAnimations() {
     gsap.registerPlugin(ScrollTrigger);
   }
 
-  const isMobile = window.innerWidth <= 900;
-
   // Initial Hero Fade In
-  gsap.from('.hero-content > *', {
-    y: 30,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.12,
-    ease: 'power3.out',
-    delay: 0.1
-  });
-
-  // Stagger glass cards
-  gsap.utils.toArray('.grid-2, .grid-3, .grid-4').forEach(grid => {
-    const cards = grid.querySelectorAll('.glass-card, .stat-card');
-    if (cards.length) {
-      gsap.from(cards, {
-        y: 25,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.08,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: grid,
-          start: isMobile ? 'top 95%' : 'top 85%',
-          once: true
-        }
-      });
-    }
-  });
+  if (document.querySelector('.hero-content')) {
+    gsap.from('.hero-content > *', {
+      y: 30,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.12,
+      ease: 'power3.out',
+      delay: 0.1
+    });
+  }
 }
 
 // Global section entry trigger called by Section Tracker in app.js
 window.animateSectionEntry = function(sectionElement) {
-  if (typeof gsap === 'undefined') return;
+  if (typeof gsap === 'undefined' || !sectionElement) return;
 
   const title = sectionElement.querySelector('.section-title');
   const tagline = sectionElement.querySelector('.tagline');
@@ -93,7 +74,7 @@ window.animateSectionEntry = function(sectionElement) {
 };
 
 function initFallbackAnimations() {
-  const cards = document.querySelectorAll('.glass-card');
+  const cards = document.querySelectorAll('.glass-card, .stat-card');
   cards.forEach(card => {
     card.style.opacity = '1';
     card.style.transform = 'none';

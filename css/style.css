@@ -106,13 +106,14 @@ body {
 
 /* Section 5 Footer Spacing Adjustments */
 .full-section:last-of-type {
-  justify-content: space-between;
+  justify-content: flex-start;
   padding-bottom: 0;
 }
 
 .full-section:last-of-type .section-content {
-  justify-content: space-between;
-  margin: 0;
+  justify-content: flex-start;
+  margin: 0 auto;
+  gap: 20px;
 }
 
 /* Background Overlay / Mesh Graphics */
@@ -491,7 +492,8 @@ body {
 /* Glass Card Image Placeholders */
 .card-img-wrapper {
   width: 100%;
-  height: 180px;
+  aspect-ratio: 16 / 9;
+  max-height: 260px;
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 16px;
@@ -501,21 +503,22 @@ body {
 }
 
 .coach-img-wrapper {
-  height: 240px;
+  aspect-ratio: 4 / 3;
+  max-height: 300px;
 }
 
 .card-img-placeholder {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center center;
   display: block;
   transition: transform 0.4s ease;
 }
 
 .coach-img {
   object-fit: cover;
-  object-position: top center;
+  object-position: center top;
 }
 
 .glass-card:hover .card-img-placeholder {
@@ -751,12 +754,12 @@ body {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   :root {
     --header-height: 70px;
   }
 
-  /* Un-constrain mandatory snap scroll on mobile so stacked vertical content doesn't get cut off */
+  /* Un-constrain mandatory snap scroll on tablet & mobile so stacked vertical content doesn't get cut off */
   html, body {
     height: auto;
     overflow-x: hidden;
@@ -777,6 +780,7 @@ body {
     scroll-snap-align: none;
     scroll-snap-stop: normal;
     padding: calc(var(--header-height) + 24px) 5% 50px 5%;
+    overflow: visible;
   }
 
   .full-section:last-of-type {
@@ -817,10 +821,20 @@ body {
     display: block;
   }
 
-  /* Grid Layout Fallbacks */
-  .grid-2, .grid-3, .grid-4 {
+  /* Grid Layout Fallbacks for Tablet (760px Viewport) */
+  .grid-4, .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .grid-2 {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 18px;
+  }
+
+  .grid-2 .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
 
   .section-nav-tracker {
@@ -875,7 +889,12 @@ body {
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 24px;

@@ -28,10 +28,10 @@ function initSectionTracker() {
   }
 
   // Update active dot and counter on scroll
-  const isMobile = window.innerWidth <= 900;
+  const isMobile = window.innerWidth <= 1024;
   const observerOptions = {
-    root: (container && window.innerWidth > 900) ? container : null,
-    threshold: isMobile ? 0.15 : 0.4
+    root: (container && window.innerWidth > 1024) ? container : null,
+    threshold: isMobile ? 0.05 : 0.25
   };
 
   const observer = new IntersectionObserver((entries) => {
